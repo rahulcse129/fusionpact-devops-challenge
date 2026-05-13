@@ -2,139 +2,112 @@
   <img src="https://raw.githubusercontent.com/Fusionpact-Org/assets/main/fusionpact-hero.gif" alt="Fusionpact Hero Banner" width="350"/>
 </p>
 
-<h1 align="center">🌟 Fusionpact DevOps Gauntlet: Assessment 2026</h1>
+<h1 align="center">🚀 FusionPact DevOps Challenge: Cloud-Native Showcase</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Cloud--Ready-brightgreen?style=for-the-badge&logo=googles-cloud&logoColor=white" title="Project Status"/>
-  <img src="https://img.shields.io/badge/Container-Docker--Required-blue?style=for-the-badge&logo=docker&logoColor=white" title="Docker"/>
-  <img src="https://img.shields.io/badge/CI/CD-Automation--Focus-red?style=for-the-badge&logo=githubactions&logoColor=white" title="CI/CD"/>
-  <img src="https://img.shields.io/badge/Observability-Mandatory-yellowgreen?style=for-the-badge&logo=grafana&logoColor=white" title="Monitoring"/>
+  <img src="https://img.shields.io/badge/Stack-Full--Tier-blueviolet?style=for-the-badge&logo=docker&logoColor=white" alt="Stack"/>
+  <img src="https://img.shields.io/badge/Status-Implemented-success?style=for-the-badge&logo=checkmarx&logoColor=white" alt="Status"/>
+  <img src="https://img.shields.io/badge/Monitoring-Enabled-orange?style=for-the-badge&logo=prometheus&logoColor=white" alt="Monitoring"/>
+  <img src="https://img.shields.io/badge/Automation-GitHub--Actions-blue?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI/CD"/>
 </p>
 
 ---
 
-<h2 align="center">🎯 MISSION BRIEFING: The Challenge</h2>
+## 📖 Overview
 
-<p align="center">
-Welcome to the <b>Fusionpact DevOps Gauntlet</b>! This is your final opportunity to prove your mastery of modern cloud engineering.<br/>
-Your task is to take this two-tier application stack and transform it into a <b>fault-tolerant, observable, and automated production system</b> in the cloud.
-</p>
+This repository showcases a complete, production-ready DevOps implementation of a two-tier application. I have transformed a basic code structure into a **fault-tolerant, observable, and automated cloud-native system**. 
 
----
-
-<h3 align="center">💻 Application Stack Overview</h3>
-
-<p align="center">
-
-| Component | Technology | Directory | Key Feature |
-| :---: | :---: | :---: | :---: |
-| 🖼️ **Frontend** | HTML / CSS | `./frontend/` | Internship Landing Page (Requires lightweight serving) |
-| ⚡ **Backend** | Python **FastAPI** | `./backend/` | REST API, Data Handling, and **Prometheus `/metrics`** endpoint |
-
-</p>
+The project demonstrates the integration of containerization, monitoring, and automated delivery pipelines to solve real-world infrastructure challenges.
 
 ---
 
-<h2 align="center">🧪 Challenge Structure</h2>
+## ✨ Highlights & Implementation
 
-<p align="center">
-The assignment is divided into <b>3 levels</b>. Complete all tasks in each level to qualify.
-</p>
+Here is a breakdown of what I have achieved in this project:
 
----
+### 🐳 1. Full-Stack Containerization
+- **Backend**: Containerized a **FastAPI** Python application using optimized slim images, exposing an internal API and `/metrics` endpoint.
+- **Frontend**: Implemented a lightweight **Nginx** server to host the static internship landing page.
+- **Orchestration**: Created a comprehensive `docker-compose.yaml` to manage the multi-service environment (Frontend, Backend, Prometheus, Grafana) with a single command.
 
-<h3 align="center">🥇 Level 1 – Cloud Deployment (30%)</h3>
+### 📊 2. Monitoring & Observability
+- **Prometheus Integration**: Configured Prometheus to scrape application-specific metrics from the backend's `/metrics` endpoint.
+- **Visual Analytics**: Deployed **Grafana** to provide real-time dashboards for infrastructure health and application performance monitoring (APM).
+- **Service Discovery**: Established seamless communication between containers via a dedicated Docker bridge network.
 
-**Objective:** Deploy the full stack on a cloud platform of your choice.
-
-**Requirements:**
-- Containerize both frontend and backend using Docker.
-- Create a `docker-compose.yml` to orchestrate the services.
-- Ensure data persistence (volume or external database).
-- Deploy the application on a public cloud (AWS, GCP, or Azure).
-- Both frontend and backend must be accessible publicly.
-
-**Deliverables:**
-- `Dockerfile` for frontend and backend  
-- `docker-compose.yml`  
-- Screenshot of the deployed application *(Document this in your SOP)*
+### 🤖 3. Automated CI/CD Pipeline
+- **GitHub Actions**: Designed a robust pipeline (`main.yml`) that triggers on every push to the `main` branch.
+- **Build & Push**: Automatically builds Docker images for both frontend and backend and pushes them to **Docker Hub**, ensuring a "single source of truth" for deployment artifacts.
+- **Secrets Management**: Secured the pipeline using GitHub Secrets for sensitive Docker credentials.
 
 ---
 
-<h3 align="center">🥈 Level 2 – Monitoring & Observability (30%)</h3>
+## 🛠️ Tech Stack
 
-**Objective:** Implement complete observability for the deployed application.
-
-**Requirements:**
-- Set up **Prometheus** to scrape backend metrics from `/metrics`.
-- Deploy **Grafana** and create dashboards for:
-  - Infrastructure metrics: CPU, memory, disk, container usage.
-  - Application metrics: request rate, latency, error counts.
-- Dashboards must visualize real-time data from the deployed services. *(Document this in your SOP)*
-
-**Deliverables:**
-- `prometheus.yml` configuration file  
-- Screenshots of Grafana dashboards (Infrastructure + Application) *(in SOP)*
+| Category | Technology |
+| :--- | :--- |
+| **Backend** | Python (FastAPI), Uvicorn |
+| **Frontend** | HTML/CSS, Nginx |
+| **Infrastructure** | Docker, Docker Compose |
+| **Observability** | Prometheus, Grafana |
+| **Automation** | GitHub Actions |
+| **Cloud Ready** | Public Cloud (AWS/GCP/Azure) |
 
 ---
 
-<h3 align="center">🥉 Level 3 – CI/CD Automation (30%)</h3>
+## 💡 What Problem Does This Solve?
 
-**Objective:** Automate the build and deployment workflow.
+In modern software development, the gap between "code on my machine" and "production-ready systems" is often wide. This project bridges that gap by solving:
 
-**Requirements:**
-- Implement a CI/CD pipeline using **Jenkins**, **GitHub Actions**, or **GitLab CI/CD**.
-- The pipeline must include:
-  - Code checkout  
-  - Build and test  
-  - Docker image build and push  
-  - Automatic deployment to the cloud
-
-**Deliverables:**
-- CI/CD configuration file (`Jenkinsfile` or `.github/workflows/main.yml`)
+1. **Deployment Inconsistency**: By using Docker, we eliminate the "it works on my machine" problem, ensuring identical environments from dev to production.
+2. **Monitoring Blind Spots**: Without observability, bugs in production are hard to trace. This setup provides instant visibility into CPU/Memory usage and API response latency.
+3. **Manual Overhead**: Automating the build/push process with CI/CD reduces human error and speeds up the delivery cycle.
+4. **Scalability**: The architecture is designed to be easily deployed to cloud clusters (like Kubernetes or AWS ECS) with minimal configuration changes.
 
 ---
 
-<h3 align="center">📑 Submission Requirements (10%)</h3>
+## 🚀 Getting Started
 
-**Instructions:**
-- Fork this repository and push your complete solution.
-- Provide a **SOP (Standard Operating Procedure)** — **do NOT** push the SOP to GitHub.  
-- Submit the SOP **via email**.
+### Prerequisites
+- Docker & Docker Compose installed.
 
-**Submission Checklist:**
-- ✅ GitHub repository URL  
-- ✅ SOP PDF (attached in email)  
-- ✅ Submit the Google Form once the tasks are complete
+### Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/fusionpact-devops-challenge.git
+   ```
+2. Start the entire stack:
+   ```bash
+   docker-compose up -d
+   ```
+3. Access the services:
+   - **Frontend**: [http://44.247.12.179/](http://44.247.12.179/)
+   - **Backend API**: [http://44.247.12.179:8000/docs](http://localhost:8000/docs)
+   - **Prometheus**: [http://44.247.12.179:9090/targets](http://localhost:9090/targets)
+   - **Grafana**: [http://44.247.12.179:3000](http://localhost:3000)
 
 ---
 
-<h3 align="center">📊 Evaluation Criteria</h3>
+## 📐 Architecture
 
-<p align="center">
-
-| Category | Weight |
-| :---: | :---: |
-| ☁️ Cloud Deployment | 30% |
-| 📊 Monitoring & Observability | 30% |
-| 🔁 CI/CD Automation | 30% |
-| 📄 Documentation & SOP | 10% |
-
-</p>
-
-<p align="center">
-  ⚠️ <b>FINAL CHECK:</b> Submissions will be rejected if the deployment is not in the cloud or if the SOP is missing.
-</p>
+```mermaid
+graph TD
+    User[User Browser] -->|Port 80| FE[Nginx Frontend]
+    User -->|Port 8000| BE[FastAPI Backend]
+    
+    subgraph Observability
+        P[Prometheus] -->|Scrape /metrics| BE
+        G[Grafana] -->|Query| P
+    end
+    
+    subgraph DevOps
+        GA[GitHub Actions] -->|Build & Push| DH[Docker Hub]
+    end
+```
 
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Fusionpact-Org/assets/main/devops-fun.gif" alt="DevOps Fun GIF" width="400"/>
+  <b>Built with ❤️ as part of the Fusionpact DevOps Internship Challenge.</b>
 </p>
 
-<h3 align="center">🚀 SHOW US YOUR BEST WORK</h3>
-
-<p align="center">
-Showcase <b>reliability, scalability, and automated cloud deployments</b> like a pro.  
-This is your chance to prove you can build real-world, production-ready systems.
-</p>
