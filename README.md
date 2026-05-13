@@ -12,6 +12,13 @@
 </p>
 
 ---
+## Access the Live services:
+   - **Frontend**: [http://44.247.12.179/](http://44.247.12.179/)
+   - **Backend API**: [http://44.247.12.179:8000/docs](http://44.247.12.179:8000/docs)
+   - **Prometheus**: [http://44.247.12.179:9090/targets](http://44.247.12.179:9090/targets)
+   - **Grafana**: [http://44.247.12.179:3000](http://44.247.12.179:3000)
+
+--
 
 ## 📖 Overview
 
@@ -81,10 +88,10 @@ In modern software development, the gap between "code on my machine" and "produc
    docker-compose up -d
    ```
 3. Access the services:
-   - **Frontend**: [http://44.247.12.179/](http://44.247.12.179/)
-   - **Backend API**: [http://44.247.12.179:8000/docs](http://localhost:8000/docs)
-   - **Prometheus**: [http://44.247.12.179:9090/targets](http://localhost:9090/targets)
-   - **Grafana**: [http://44.247.12.179:3000](http://localhost:3000)
+   - **Frontend**: [http://localhost/](http://localhost/)
+   - **Backend API**: [http://localhost:8000/docs](http://localhost:8000/docs)
+   - **Prometheus**: [http://localhost:9090/targets](http://localhost:9090/targets)
+   - **Grafana**: [http://localhost:3000](http://localhost:3000)
 
 ---
 
